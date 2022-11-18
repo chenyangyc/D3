@@ -1,4 +1,4 @@
-# Compiler Silent Bug Deduplication via Holistic Analysis
+# Silent Compiler Bug De-duplication via Three-Dimensional Analysis
 
 Welcome to the homepage of $D^3$! This the implementation of our research "Silent Compiler Bug De-duplication via Three-Dimensional Analysis".
 
@@ -20,29 +20,16 @@ To evaluate the effectiveness of $D^3$, we conducted an empirical study based on
 
 ## Getting Started
 
+> The failing test programs can be downloaded from the [link](https://drive.google.com/file/d/1R20coo1SdnOBminAIYjgJ5ZvrRiuUiBd/view?usp=share_link)
+
 ### Use pre-calculated distances
 
 If you don't want to process the data and calculate the distances by youself, we provide the pre-calculated distances in folder `distances`.
 
-**Unzip the data.zip under your project directory first**, then just run the following command to get the result, which will be saved in the `results` folder.
+**Unzip the [data.zip](https://drive.google.com/file/d/1R20coo1SdnOBminAIYjgJ5ZvrRiuUiBd/view?usp=share_link) under your project directory first**, then just run the following command to get the result, which will be saved in the `results` folder.
 
 ```
 python test.py --dataset llvm280 --loop_time 100
 ```
 
 Note that `--dataset` indicates which data set to test on. The options are 'gcc430', 'gcc440', 'gcc450', and 'llvm280'. `--loop_time` indicates the number of times the test is repeated, and the results are averaged. We recommend at least 100 times to avoid random factors. 
-
-6f07074562fb71ed0f5255ecc2737b6299b5caa1
-
-
-
-9f9260eca596172b7f64c62c95ff6ef1b93c2131
-
-
-
-## Directory description
-
-```markdown
-
-```
-
