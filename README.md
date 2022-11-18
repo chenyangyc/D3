@@ -69,10 +69,10 @@ If you want to extend to other data sets, you only need to modify the path here 
 ## Directory description
 
 ```
-├── distances                   	:  the calculated distances
-├── figures                     	:  figures in the README.md
-├── passing-testsuite-coverage  	:  preprocessed coverage information of testsuites
-├── results                     	:  testing results
+├── distances                     :  the calculated distances
+├── figures                       :  figures in the README.md
+├── passing-testsuite-coverage    :  preprocessed coverage information of testsuites
+├── results                       :  testing results
 ├── Config.py                     :  Configurations and dataset descriptions
 ├── get-execution-features.py     :  get execution features and save the distance 
 ├── get-program-features.py       :  get program features and save the distance 
