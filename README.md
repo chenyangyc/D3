@@ -16,15 +16,15 @@ To evaluate the effectiveness of $D^3$, we conducted an empirical study based on
 
 <p align="center">Table 1: Overall experimental results</p>
 
-<img src="figures/results.png" alt="overview" style="zoom:150%;" />
+<div align=center><img src="figures/results.png"></div>
 
 ## Getting Started
 
-> The failing test programs can be downloaded from the [link](https://drive.google.com/file/d/1R20coo1SdnOBminAIYjgJ5ZvrRiuUiBd/view?usp=share_link)
+> The failing test programs and their coverage can be downloaded from the [link](https://drive.google.com/file/d/1R20coo1SdnOBminAIYjgJ5ZvrRiuUiBd/view?usp=share_link), the coverage data of test suites (used in the coverage feature extraction) is in the `passing testsuite coverage` folder, the generated passing programs and the corresponding differences extracted from pairs of failing program and passing programs (used in the program feature extraction) can be downloaed from this [link](https://drive.google.com/file/d/1o8wfIQdsUvrt73oWdnlud1Hy4zKQ1-Qo/view?usp=share_link)
 
 ### Use pre-calculated distances
 
-If you don't want to process the data and calculate the distances by youself, we provide the pre-calculated distances in folder `distances`.
+If you don't want to process the row data by youself, we provide the pre-calculated distances in folder `distances`.
 
 **Unzip the [data.zip](https://drive.google.com/file/d/1R20coo1SdnOBminAIYjgJ5ZvrRiuUiBd/view?usp=share_link) under your project directory first**, then just run the following command to get the result, which will be saved in the `results` folder.
 
@@ -33,3 +33,8 @@ python test.py --dataset llvm280 --loop_time 100
 ```
 
 Note that `--dataset` indicates which data set to test on. The options are 'gcc430', 'gcc440', 'gcc450', and 'llvm280'. `--loop_time` indicates the number of times the test is repeated, and the results are averaged. We recommend at least 100 times to avoid random factors. 
+
+
+
+### Process the row data on your own
+
