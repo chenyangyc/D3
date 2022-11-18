@@ -66,8 +66,6 @@ dis_url = './coverage.npy'
 
 If you want to extend to other data sets, you only need to modify the path here (the required files are provided in our data).
 
-
-
 ## Directory description
 
 ```
@@ -75,10 +73,10 @@ If you want to extend to other data sets, you only need to modify the path here 
 ├── figures                     	:  figures in the README.md
 ├── passing-testsuite-coverage  	:  preprocessed coverage information of testsuites
 ├── results                     	:  testing results
-├── Config.py                   	:  Configurations and dataset descriptions
-├── get-execution-features.py   	:  get execution features and save the distance 
+├── Config.py                     :  Configurations and dataset descriptions
+├── get-execution-features.py     :  get execution features and save the distance 
 ├── get-program-features.py       :  get program features and save the distance 
 ├── get-optimization-features.py  :  get optimization features and save the distance 
-└── test.py												:  use the calculated distances to reproduce the results
+└── test.py                       :  use the calculated distances to reproduce the results
 ```
 
