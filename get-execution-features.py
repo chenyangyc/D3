@@ -5,7 +5,7 @@ from tqdm import tqdm
 import pandas as pd
 
 names = './data/llvm280/names'
-wrongat = './data/llvm280/names/wrongat-new'
+wrongat = './data/llvm280/wrongat-new'
 cov_prefix = './data/llvm280/'
 ep_file = './passing-testsuite-coverage/testsuite_280_ep.txt'
 np_file = './passing-testsuite-coverage/testsuite_280_np.txt'

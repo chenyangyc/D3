@@ -20,7 +20,7 @@ To evaluate the effectiveness of $D^3$, we conducted an empirical study based on
 
 ## Getting Started
 
-> The failing test programs and their coverage can be downloaded from the [link](https://drive.google.com/file/d/1R20coo1SdnOBminAIYjgJ5ZvrRiuUiBd/view?usp=share_link), the coverage data of test suites (used in the coverage feature extraction) is in the `passing testsuite coverage` folder, the generated passing programs and the corresponding differences extracted from pairs of failing program and passing programs (used in the program feature extraction) can be downloaed from this [link](https://drive.google.com/file/d/1o8wfIQdsUvrt73oWdnlud1Hy4zKQ1-Qo/view?usp=share_link)
+> The failing test programs and their coverage can be downloaded from the [link](https://drive.google.com/file/d/1R20coo1SdnOBminAIYjgJ5ZvrRiuUiBd/view?usp=share_link), the coverage data of test suites (used in the execution feature extraction) is in the `passing testsuite coverage` folder, the generated passing programs and the corresponding differences extracted from pairs of failing program and passing programs (used in the program feature extraction) can be downloaded from this [link](https://drive.google.com/file/d/1o8wfIQdsUvrt73oWdnlud1Hy4zKQ1-Qo/view?usp=share_link)
 
 ### Use pre-calculated distances
 
@@ -37,4 +37,48 @@ Note that `--dataset` indicates which data set to test on. The options are 'gcc4
 
 
 ### Process the row data on your own
+
+Here we take the data processing of llvm-2.8.0 as an example.
+
+First download the [generated passing programs and the differences](https://drive.google.com/file/d/1o8wfIQdsUvrt73oWdnlud1Hy4zKQ1-Qo/view?usp=share_link) and unzip it, then place it in the `mutation-data` folder.
+
+To get the three features, namely program features, optimization features, and exexcution features, just run the following three commands.
+
+```python
+# Program features
+python get-program-features.py
+# Optimization features
+python get-optimization-features.py
+# Execution features
+python get-execution-features.py
+```
+
+The required configuration for each feature is in the header of the file, such as `get-execution-features.py`.  The first few lines of the file look like this:
+
+```python
+names = './data/llvm280/names'
+wrongat = './data/llvm280/wrongat-new'
+cov_prefix = './data/llvm280/'
+ep_file = './passing-testsuite-coverage/testsuite_280_ep.txt'
+np_file = './passing-testsuite-coverage/testsuite_280_np.txt'
+dis_url = './coverage.npy'
+```
+
+If you want to extend to other data sets, you only need to modify the path here (the required files are provided in our data).
+
+
+
+## Directory description
+
+```
+├── distances                   	:  the calculated distances
+├── figures                     	:  figures in the README.md
+├── passing-testsuite-coverage  	:  preprocessed coverage information of testsuites
+├── results                     	:  testing results
+├── Config.py                   	:  Configurations and dataset descriptions
+├── get-execution-features.py   	:  get execution features and save the distance 
+├── get-program-features.py       :  get program features and save the distance 
+├── get-optimization-features.py  :  get optimization features and save the distance 
+└── test.py												:  use the calculated distances to reproduce the results
+```
 
