@@ -1,15 +1,12 @@
-from glob import glob
-from scipy.stats import spearmanr
 import numpy as np
 from tqdm import tqdm
-import pandas as pd
 
 names = './data/llvm280/names'
-wrongat = './data/llvm280/wrongat-new'
+wrongat = './data/llvm280/wrongat.txt'
 cov_prefix = './data/llvm280/'
 ep_file = './passing-testsuite-coverage/testsuite_280_ep.txt'
 np_file = './passing-testsuite-coverage/testsuite_280_np.txt'
-dis_url = './coverage.npy'
+dis_url = './coverage_dis.npy'
 
 id2level = {}
 with open(wrongat, 'r') as f:
@@ -30,11 +27,18 @@ with open(names, 'r') as f:
         id = index
         name2id[name] = id
         id2name[id] = name
-        if index <= 84:
-            cov = cov_prefix + name + '.' + id2level[id] + 'fcov'
+        if 'llvm' in names:
+            if index <= 84:
+                cov = cov_prefix + name + '.' + id2level[id] + 'fcov'
+                all_covs.append(cov)
+            else:
+                cov = cov_prefix + name + '.ofcov'
+                all_covs.append(cov)
+        elif 'gcc450' in names:
+            cov = cov_prefix + name + '.' + 'levelfcov'
             all_covs.append(cov)
         else:
-            cov = cov_prefix + name + '.ofcov'
+            cov = cov_prefix + name + '.' + id2level[id] + 'fcov'
             all_covs.append(cov)
 
 all_func_list = []
@@ -62,7 +66,7 @@ with open(np_file, 'r') as f:
         np_dict[name] = count
 
 all_cases_set = {}
-for single_case in tqdm(cov):
+for single_case in tqdm(all_covs):
     rank_set = {}
     tc_name = single_case.strip().split('/')[-1].split('.')[0]
     if tc_name in id2name.values():

@@ -26,7 +26,7 @@ To evaluate the effectiveness of $D^3$, we conducted an empirical study based on
 
 If you don't want to process the row data by youself, we provide the pre-calculated distances in folder `distances`.
 
-**Unzip the [data.zip](https://drive.google.com/file/d/1R20coo1SdnOBminAIYjgJ5ZvrRiuUiBd/view?usp=share_link) under your project directory first**, then just run the following command to get the result, which will be saved in the `results` folder.
+**Unzip the [data.zip](https://drive.google.com/file/d/1wurtag4pNQzAYRXDJti0QE5J9EIB1wSo/view?usp=sharing) under your project directory first**, then just run the following command to get the result, which will be saved in the `results` folder.
 
 ```
 python test.py --dataset llvm280 --loop_time 100
@@ -57,7 +57,7 @@ The required configuration for each feature is in the header of the file, such a
 
 ```python
 names = './data/llvm280/names'
-wrongat = './data/llvm280/wrongat-new'
+wrongat = './data/llvm280/wrongat.txt'
 cov_prefix = './data/llvm280/'
 ep_file = './passing-testsuite-coverage/testsuite_280_ep.txt'
 np_file = './passing-testsuite-coverage/testsuite_280_np.txt'
